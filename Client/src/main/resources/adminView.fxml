@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="330.0" prefWidth="564.0"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="AdminController">
+    <children>
+        <TextField fx:id="textFieldUserName" layoutX="30.0" layoutY="51.0" promptText="Username"/>
+        <TextField fx:id="textFieldPassword" layoutX="30.0" layoutY="86.0" promptText="Password"/>
+        <TextField fx:id="textFieldSiteName" layoutX="30.0" layoutY="200.0" promptText="Name"/>
+        <TextField fx:id="textFieldParkingLotName" layoutX="225.0" layoutY="51.0" promptText="Name"/>
+        <Spinner fx:id="spinnerXPos" editable="true" layoutX="225.0" layoutY="86.0"/>
+        <Spinner fx:id="spinnerYPos" editable="true" layoutX="225.0" layoutY="123.0"/>
+        <Button layoutX="28.0" layoutY="161.0" mnemonicParsing="false" onAction="#addUserHandler" text="Add user"/>
+        <Button layoutX="30.0" layoutY="234.0" mnemonicParsing="false" onAction="#addSiteHandler" text="Add site"/>
+        <Button layoutX="225.0" layoutY="200.0" mnemonicParsing="false" onAction="#addParkingLotHandler"
+                text="Add parking lot"/>
+        <ComboBox fx:id="comboBoxSite" layoutX="225.0" layoutY="161.0" prefWidth="150.0"/>
+        <ComboBox fx:id="comboBoxRemoveSite" layoutX="400.0" layoutY="51.0" prefWidth="150.0"/>
+        <ComboBox fx:id="comboBoxRemoveParkingLotSite" layoutX="400.0" layoutY="123.0" prefWidth="150.0"/>
+        <ComboBox fx:id="comboBoxRemoveUser" layoutX="400.0" layoutY="222.0" prefWidth="150.0"/>
+        <Button layoutX="400.0" layoutY="86.0" mnemonicParsing="false" onAction="#removeSiteHandler"
+                text="Remove site"/>
+        <ComboBox fx:id="comboBoxRemoveParkingLot" layoutX="400.0" layoutY="153.0" prefWidth="150.0"/>
+        <Button layoutX="400.0" layoutY="188.0" mnemonicParsing="false" onAction="#removeParkingLotHandler"
+                text="Remove parking lot"/>
+        <Button layoutX="400.0" layoutY="259.0" mnemonicParsing="false" onAction="#removeUserHandler"
+                text="Remove user"/>
+        <ComboBox fx:id="comboBoxUserType" layoutX="30.0" layoutY="123.0" prefWidth="150.0"/>
+    </children>
+</AnchorPane>

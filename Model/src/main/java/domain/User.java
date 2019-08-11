@@ -1,7 +1,7 @@
 package domain;
 
+import enums.UserType;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.usertype.UserType;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,12 +10,12 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table( name = "Users" )
+@Table(name = "Users")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
     private String userName;
     private String password;
@@ -24,17 +24,22 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String userName, String password, UserType userType) {
+    public User(String userName, String password, enums.UserType userType) {
         this.userName = userName;
         this.password = password;
         this.userType = userType;
     }
 
-    public long getId() {
-        return id;
+    public String getUserName() {
+        return userName;
     }
 
-    private void setId(long id) {
-        this.id = id;
+    public UserType getUserType() {
+        return userType;
+    }
+
+    @Override
+    public String toString() {
+        return userName;
     }
 }

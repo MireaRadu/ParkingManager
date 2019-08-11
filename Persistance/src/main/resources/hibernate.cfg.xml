@@ -6,9 +6,9 @@
 <hibernate-configuration>
     <session-factory>
 
-        <property name="dialect">SQLiteDialect</property>
+        <property name="dialect">sql.dialect.SQLiteDialect</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
-        <property name="connection.url">jdbc:sqlite:D:\Projects\java\MAPL5_Copy_Copy\MppDB.db</property>
+        <property name="connection.url">jdbc:sqlite:parkingManagement.db</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
@@ -16,6 +16,10 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping resource="Proba.hbm.xml"/>
+        <mapping class="domain.User"/>
+        <mapping class="domain.Reservation"/>
+        <mapping class="domain.ParkingLot"/>
+        <mapping class="domain.ParkingLotPositioned"/>
+        <mapping class="domain.Site"/>
     </session-factory>
 </hibernate-configuration>

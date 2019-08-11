@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="repositoryUser" class="repository.RepositoryUser"/>
+    <bean id="repositorySite" class="repository.RepositorySite"/>
+    <bean id="repositoryReservation" class="repository.RepositoryReservation"/>
+
+    <bean id="server" class="Server">
+        <constructor-arg ref="repositoryUser"/>
+        <constructor-arg ref="repositoryReservation"/>
+        <constructor-arg ref="repositorySite"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="server"/>
+        <property name="service" ref="server"/>
+        <property name="serviceInterface" value="services.ServerInterface"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+
+</beans>
